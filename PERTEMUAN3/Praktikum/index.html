@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Batik Nusantara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>Toko Online</header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Produk</a>
+    <a href="#">Tentang</a>
+    <a href="#">Kontak</a>
+  </nav>
+  
+  <div class="banner">
+    <img src="https://i.pinimg.com/1200x/44/c7/43/44c743eb273a4a8aedbc1c7770f604ba.jpg" alt="">
+    <img src="https://i.pinimg.com/1200x/26/ee/8f/26ee8fb305779d835219f84c64bb88a1.jpg" alt="">
+    <img src="https://i.pinimg.com/1200x/4b/e2/0d/4be20d122c4484dac9136776fe234f7e.jpg" alt="">
+    <img src="https://i.pinimg.com/1200x/88/4f/f4/884ff498703a18389cfbc38d1f33b6d3.jpg" alt="">
+    <div>Batik Nusantara</div>
+  </div>
+
+  <div class="container">
+    <div class="produk-grid">
+      <div class="produk">
+        <img src="https://i.pinimg.com/1200x/26/ee/8f/26ee8fb305779d835219f84c64bb88a1.jpg" alt="Produk 1">
+        <h4>Batik Solo</h4>
+        <p>Rp 150.000</p>
+      </div>
+
+      <div class="produk">
+        <img src="https://i.pinimg.com/736x/88/8f/7e/888f7e1d1254adebbda6aa97bfaadb52.jpg" alt="Produk 2">
+        <h4>Batik Paisley</h4>
+        <p>Rp 200.000</p>
+      </div>
+
+      <div class="produk">
+        <img src="https://i.pinimg.com/1200x/e4/ef/fb/e4effb2e7c10b2bd9e717357a799c0ba.jpg" alt="Produk 3">
+        <h4>Batik Pekalongan</h4>
+        <p>Rp 100.000</p>
+      </div>
+
+      <div class="produk">
+        <img src="https://i.pinimg.com/1200x/44/c7/43/44c743eb273a4a8aedbc1c7770f604ba.jpg" alt="Produk 4">
+        <h4>Batik Kawung</h4>
+        <p>Rp 150.000</p>
+      </div>
+
+      <div class="produk">
+        <img src="https://i.pinimg.com/1200x/d8/0f/db/d80fdb76ba578db79d2653aefd43f08e.jpg" alt="Produk 5">
+        <h4>Batik Cirebon</h4>
+        <p>Rp 175.000</p>
+      </div>
+
+      <div class="produk">
+        <img src="https://i.pinimg.com/1200x/4b/e2/0d/4be20d122c4484dac9136776fe234f7e.jpg" alt="Produk 6">
+        <h4>Batik Lasem</h4>
+        <p>Rp 145.000</p>
+      </div>
+    </div>
+
+    <div class="rekomendasi">
+      <h3>Rekomendasi</h3>
+      <img src="https://i.pinimg.com/1200x/c5/2b/d2/c52bd2471d0f631639db63918f17c8a2.jpg" alt="Batik Parang">
+      <p>Baju Batik Coklat<br>Rp 369.000</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+         <div class="footer-section">
+            <h3>Our Address</h3>
+            <p>Jl. Melati Indah No. 7, Jakarta</p>
+            <p>📞 +62 895 2456 7835</p>
+            <p>✉️ info@batiknusantara.id</p>
+         </div>
+
+          <div class="footer-section">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#">Batik Tulis</a></li>
+                <li><a href="#">Batik Cap</a></li>
+                <li><a href="#">Batik Modern</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+          </div>
+
+           <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul class="social">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Tiktok</a></li>
+                <li><a href="#">Youtube</a></li>
+            </ul>
+           </div>
+    </div>
+    <div class="copy">
+        &copy; 2025 Batik Nusantara | All Rights Reserved
+    </div>
+  </footer>
+
+  <script>
+    // SLIDESHOW OTOMATIS
+    let slides = document.querySelectorAll(".banner .slide");
+    let index = 0;
+
+    function showNextSlide() {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 4000); // ganti gambar setiap 4 detik
+  </script>
+</body>
+</html>
