@@ -1,0 +1,23 @@
+body {
+  background: #f8f9fa;
+}
+
+/* Produk Card Hover */
+.product-card {
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.08);
+}
+
+/* Gambar produk */
+#productsContainer .card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Sticky aside */
+@media (min-width: 992px) {
+  aside .sticky-top { top: 80px; }
+}
