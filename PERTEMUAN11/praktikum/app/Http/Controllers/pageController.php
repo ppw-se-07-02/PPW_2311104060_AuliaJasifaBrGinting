@@ -7,6 +7,7 @@ class PageController extends Controller
         return "Halaman Home"; 
     } 
     public function tampil() { 
-        return "Data Mahasiswa"; 
+        $arrMahasiswa = ["Aulia Jasifa","Naura Aisha","Alya Rabani","Berlian Seva"]; 
+        return view('mahasiswa')->with('mahasiswa', $arrMahasiswa); 
     } 
 } 

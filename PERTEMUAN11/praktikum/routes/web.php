@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController; 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Membuat route
+Membuat route
 Route::get('/beranda', function () {
     return "Halaman Beranda";
 });
@@ -78,27 +79,27 @@ Route::get('/baju/{c}', function ($c) {
 
 
 // membuat view
-// Route::get('/mahasiswa', function () { 
-//     return view('mahasiswa'); 
-// });
+Route::get('/mahasiswa', function () { 
+    return view('mahasiswa'); 
+});
 
-// Route::get('/mahasiswa', function () { 
-//     return view('universitas/mahasiswa'); 
-// }); 
+Route::get('/mahasiswa', function () { 
+    return view('universitas/mahasiswa'); 
+}); 
 
-// Route::get('/mahasiswa', function () { 
-//     return view('universitas.mahasiswa',["mhs1"=>"Aulia Jasifa"]); 
-// }); 
+Route::get('/mahasiswa', function () { 
+    return view('universitas.mahasiswa',["mhs1"=>"Aulia Jasifa"]); 
+}); 
 
-// Route::get('/mahasiswa', function () { 
-//     return view('universitas.mahasiswa', 
-//     [ 
-//         "mhs1" => "Aulia Jasifa", 
-//         "mhs2" => "Naura Aisha", 
-//         "mhs3" => "Alya Rabani", 
-//         "mhs4" => "Berlian Seva" 
-//     ]); 
-// }); 
+Route::get('/mahasiswa', function () { 
+    return view('universitas.mahasiswa', 
+    [ 
+        "mhs1" => "Aulia Jasifa", 
+        "mhs2" => "Naura Aisha", 
+        "mhs3" => "Alya Rabani", 
+        "mhs4" => "Berlian Seva" 
+    ]); 
+}); 
 
 Route::get('/mahasiswa', function () {
     $arrMhs = [
@@ -130,6 +131,5 @@ Route::get('/produk', function () {
     return view('produk', $arrProduk);
 });
 
-Route::get('<url>',[App\Http\Controllers\Nama_Controller::class,'nama_method']);
-Route::get('/', [App\Http\Controllers\PageController::class,'index']);
-// Route::get('/mahasiswa',[App\Http\Controllers\PageController::class,'tampil']);
+Route::get('/', [App\Http\Controllers\PageController::class,'index']); 
+Route::get('/mahasiswa',[App\Http\Controllers\PageController::class,'tampil']); 
