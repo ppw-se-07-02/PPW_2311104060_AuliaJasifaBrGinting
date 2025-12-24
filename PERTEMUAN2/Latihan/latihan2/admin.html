@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Conjuring - Halaman Administrator</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>🕯 The Conjuring - Halaman Administrator</h1>
+  </header>
+
+  <!-- Menu Sidebar & Konten -->
+  <main>
+    <aside class="sidebar">
+      <h3>Menu Ritual</h3>
+      <ul>
+        <li><a href="#" class="active" onclick="showContent('dashboard', this)"> Beranda</a></li>
+        <li><a href="#" onclick="showContent('dataUser', this)"> Data Korban</a></li>
+        <li><a href="#" onclick="showContent('kelolaProduk', this)"> Kelola Artefak</a></li>
+        <li><a href="#" onclick="showContent('editPassword', this)"> Ganti Mantra</a></li>
+        <li><a href="#" onclick="logout()"> Keluar</a></li>
+      </ul>
+    </aside>
+
+    <section class="content">
+
+      <!-- DASHBOARD -->
+      <div id="dashboard" class="box active">
+        <h2>Selamat Datang, Penjaga Gerbang 👁</h2>
+        <p>Gunakan menu di sebelah kiri untuk mengontrol data ritual, artefak, dan mantra rahasia.</p>
+
+        <div class="info">
+          <h3> Informasi Kehidupan Ed dan Lorraine Warren</h3>
+          <ul>
+            <li><strong>Ed Warren:</strong> meninggal pada 23 Agustus 2006.</li>
+            <li><strong>Lorraine Warren:</strong> meninggal pada 18 April 2019</li>
+            <li><strong>Tahun pertama pertolongan paranormal:</strong> sekitar 1952–1953</li>
+            <li><strong>Lokasi Awal:</strong> Wilayah Connecticut, Amerika Serikat</li>
+            <li><strong>Kasus pertama yang tercatat:</strong> Ed dan Lorraine melakukan penyelidikan pada rumah dan properti yang dilaporkan mengalami aktivitas paranormal, termasuk penampakan hantu dan gangguan supranatural kecil.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DATA USER -->
+      <div id="dataUser" class="box hidden">
+        <h2>🧙 Data Korban</h2>
+        <p>Daftar entitas yang telah terjebak dalam lingkaran ritual:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Tahun Kejadian</th>
+              <th>Lokasi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Carolyn dan Roger Perron</td><td>1971–1972</td><td>Harrisville</td></tr>
+            <tr><td>2</td><td>Andrea, Nancy, Christine, Cindy, April Perron</td><td>1971–1972</td><td>Harrisville</td></tr>
+            <tr><td>3</td><td>Bathsheba Sherman</td><td>1800-an</td><td>Rumah Perron</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- KELOLA PRODUK -->
+      <div id="kelolaProduk" class="box hidden">
+        <h2>📜 Kelola Artefak</h2>
+        <p>Tambah, edit, atau hapus artefak terkutuk di sini:</p>
+        <button class="btn-primary">+ Tambah Artefak</button>
+        <ul class="produk-list">
+          <li>Annabelle Doll <span class="badge">Terkunci</span></li>
+          <li>Musical Box <span class="badge">Terkunci</span></li>
+          <li>Nun Painting <span class="badge out">Aktif</span></li>
+        </ul>
+      </div>
+
+      <!-- EDIT PASSWORD -->
+      <div id="editPassword" class="box hidden">
+        <h2>🔐 Ganti Mantra</h2>
+        <form>
+          <label>Mantra Lama</label>
+          <input type="password" placeholder="Bisikkan mantra lama..." />
+
+          <label>Mantra Baru</label>
+          <input type="password" placeholder="Bisikkan mantra baru..." />
+
+          <button type="button" class="btn-primary">Simpan Mantra</button>
+        </form>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 The Conjuring — Wilayah Terlarang</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function showContent(id, element) {
+      document.querySelectorAll('.box').forEach(b => {
+        b.classList.add('hidden');
+        b.classList.remove('active');
+      });
+
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function logout() {
+      const confirmLogout = confirm("Apakah Anda yakin ingin meninggalkan ruang ini?");
+      if (confirmLogout) {
+        window.location.href = "login.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
