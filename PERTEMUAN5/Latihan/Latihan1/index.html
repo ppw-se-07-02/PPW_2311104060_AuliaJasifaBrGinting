@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas 1 - Hitung Total Harga</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 40px;
+    }
+    h2 {
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+      text-align: center;
+    }
+    #total {
+      text-align: center;
+      font-weight: bold;
+      color: #007BFF;
+      display: none; /* sembunyikan dulu */
+    }
+    #btn-hitung {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #btn-hitung:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>Program Hitung Total Harga Pembelian</h2>
+  <table>
+    <tr>
+      <th>Nama Barang</th>
+      <th>Harga Satuan</th>
+      <th>Jumlah</th>
+      <th>Total</th>
+    </tr>
+    <tbody id="daftar-barang"></tbody>
+  </table>
+
+  <button id="btn-hitung">Hitung Total Harga</button>
+  <p id="total"></p>
+
+  <script>
+    const barang = [
+      { nama: "Susu UHT", harga: 42000, jumlah: 10 },
+      { nama: "Roti Tawar", harga: 30000, jumlah: 3 },
+      { nama: "Mie Instan", harga: 20000, jumlah: 5 },
+      { nama: "Sosis", harga: 51000, jumlah: 7 }
+    ];
+
+    // Tampilkan data barang ke tabel
+    const tbody = document.getElementById("daftar-barang");
+    barang.forEach(item => {
+      const subtotal = item.harga * item.jumlah;
+      tbody.innerHTML += `
+        <tr>
+          <td>${item.nama}</td>
+          <td>Rp ${item.harga.toLocaleString()}</td>
+          <td>${item.jumlah}</td>
+          <td>Rp ${subtotal.toLocaleString()}</td>
+        </tr>
+      `;
+    });
+
+    // Saat tombol diklik, baru tampilkan total
+    document.getElementById("btn-hitung").addEventListener("click", function(){
+      let totalHarga = 0;
+      barang.forEach(item => {
+        totalHarga += item.harga * item.jumlah;
+      });
+
+      const totalElem = document.getElementById("total");
+      totalElem.innerText = `Total Harga Pembelian: Rp ${totalHarga.toLocaleString()}`;
+      totalElem.style.display = "block"; // tampilkan totalnya
+    });
+  </script>
+</body>
+</html>

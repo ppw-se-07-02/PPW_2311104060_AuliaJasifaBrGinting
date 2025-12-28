@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas 3 - jQuery Medium</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <button id="tombol">Klik Saya</button>
+  <p id="pesan">Silakan klik tombol di atas.</p>
+
+  <script>
+    $(document).ready(function(){
+      $("#tombol").click(function(){
+        $("#pesan").text("Tombol sudah diklik!");
+        $("#pesan").css("color", "red");
+      });
+    });
+  </script>
+</body>
+</html>

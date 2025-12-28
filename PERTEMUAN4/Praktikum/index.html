@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contoh Container Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
+<body>
+  <div class="container-fluid bg-light p-3">
+    <!-- 100% wide until small breakpoint (<576px the container becomes full width until 576) -->
+    <div class="container-sm bg-primary text-white p-2 mb-2">100% wide until small (sm)</div>
+
+    <!-- 100% wide until medium breakpoint (md = 768px) -->
+    <div class="container-md bg-success text-white p-2 mb-2">100% wide until medium (md)</div>
+
+    <div class="container-lg bg-warning text-dark p-2 mb-2">100% wide until large (lg)</div>
+
+    <div class="container-xl bg-danger text-white p-2 mb-2">100% wide until extra large (xl)</div>
+
+    <div class="container-xxl bg-dark text-white p-2 mb-2">100% wide until extra extra large (xxl)</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+</html>
